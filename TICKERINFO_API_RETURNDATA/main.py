@@ -1,0 +1,1 @@
+#API for news: https://newsapi.org/

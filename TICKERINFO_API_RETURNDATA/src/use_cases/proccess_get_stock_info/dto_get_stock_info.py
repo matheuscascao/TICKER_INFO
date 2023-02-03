@@ -1,5 +1,5 @@
 from typing import Dict, List
-from TICKERINFO_API_RETURNDATA.src.entities.News import News
+from src.entities.Stock import News
 
 class StockInfoDtoInput:
     stock_name: str

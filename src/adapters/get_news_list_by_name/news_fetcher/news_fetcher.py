@@ -1,4 +1,4 @@
-from src.adapter.get_news_list_by_name.news_fetcher_interface import NewsFetcherInterface
+from src.adapters.get_news_list_by_name.news_fetcher_interface import NewsFetcherInterface
 from src.entities.Stock import News 
 from typing import List, Dict
 import requests

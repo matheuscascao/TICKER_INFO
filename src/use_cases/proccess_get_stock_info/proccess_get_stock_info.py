@@ -1,6 +1,6 @@
 from src.entities.Stock import News, Stock
 from src.use_cases.proccess_get_stock_info.dto_get_stock_info import StockInfoDtoInput, StockInfoDtoOutput
-from src.adapter.get_news_list_by_name.news_fetcher_interface import NewsFetcherInterface
+from src.adapters.get_news_list_by_name.news_fetcher_interface import NewsFetcherInterface
 
 class ProccessCreateStock():
     def __init__(

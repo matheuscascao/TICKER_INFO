@@ -1,21 +1,20 @@
-from src.adapters.get_news_list_by_name.news_fetcher_interface import NewsFetcherInterface
-from src.entities.Stock import News 
+from src.core.configs import settings
+from src.adapters.News.news_fetcher_interface import NewsFetcherInterface
+from src.entities.Asset import News 
 from typing import List, Dict
 import requests
-
-apiKey = "ad95902286414996b0cbe1e22fce0859"
 
 class NewsFetcher(NewsFetcherInterface):
 
     def return_news_by_ticker(self, ticker: str) -> List:
         _raw_news: List = []
         try:
-            endpoint = "https://newsapi.org/v2/top-headlines"
+            url = f"{settings.BASE_ENDPOINT_NEWSFETCHER}/top-headlines"
             params = {
                 "q": ticker,
-                "apiKey": apiKey
+                "apiKey": settings.TOKEN_NEWSFETCHER
             }
-            r = requests.get(endpoint, params=params)
+            r = requests.get(url, params=params)
             
             _raw_news = r.json()["articles"]
         except Exception as e:

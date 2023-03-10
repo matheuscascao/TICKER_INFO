@@ -1,6 +1,6 @@
 import abc
 from typing import List
-from src.entities.Stock import News 
+from src.entities.Asset import News 
 
 class NewsFetcherInterface(metaclass= abc.ABCMeta):
     @abc.abstractclassmethod

@@ -6,12 +6,12 @@ import requests
 
 class NewsFetcher(NewsFetcherInterface):
 
-    def return_news_by_ticker(self, ticker: str) -> List:
+    def return_news_by_asset(self, asset: str) -> List:
         _raw_news: List = []
         try:
             url = f"{settings.BASE_ENDPOINT_NEWSFETCHER}/top-headlines"
             params = {
-                "q": ticker,
+                "q": asset,
                 "apiKey": settings.TOKEN_NEWSFETCHER
             }
             r = requests.get(url, params=params)
@@ -22,8 +22,8 @@ class NewsFetcher(NewsFetcherInterface):
         finally:
             return _raw_news
         
-    def create_news_list(self, ticker) -> List[News]:
-        _raw_news = self.return_news_by_ticker(ticker)
+    def create_news_list(self, asset) -> List[News]:
+        _raw_news = self.return_news_by_asset(asset)
         _news: List[News] = []
         
         for item in _raw_news:

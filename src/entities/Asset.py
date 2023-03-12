@@ -21,14 +21,14 @@ class Asset():
     news_list: List[News] = []
     def __init__(
             self,
-            ticker: str,
+            asset: str,
             asset_name: str,
             daily_price_variation: float,
             weekly_price_variation: float,
             market_cap: float,
             current_price: float,
     ) -> None:
-        self.ticker = ticker
+        self.asset = asset
         self.asset_name = asset_name
         self.daily_price_variation = daily_price_variation
         self.weekly_price_variation = weekly_price_variation
@@ -81,7 +81,7 @@ class Asset():
     def get_stock(self):
         stock_object: Dict = {}
         
-        stock_object['ticker'] = self.ticker
+        stock_object['identifier'] = self.identifier
         stock_object['asset_name'] = self.asset_name
         stock_object['daily_price_variation'] = self.daily_price_variation
         stock_object['weekly_price_variation'] = self.weekly_price_variation
